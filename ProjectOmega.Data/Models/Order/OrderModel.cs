@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ProjectOmega.Data.Entities
+﻿namespace ProjectOmega.Data.Models.Order
 {
-    public class Order
+    public class OrderModel
     {
-        [Key]
-        public long OrderId { get; set; }
-
         public string Number { get; set; }
 
         public long ClientId { get; set; }
