@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.DAL.FB", "ProjectOmega\ProjectOmega.DAL.FB.csproj", "{89792492-617D-47D8-BAF9-F781DB80E7ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.DAL.MsSql", "ProjectOmega.DAL.MsSql\ProjectOmega.DAL.MsSql.csproj", "{8C7813F7-B473-4215-AC2B-EECDC4BB32BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.DAL.MsSql", "ProjectOmega.DAL.MsSql\ProjectOmega.DAL.MsSql.csproj", "{8C7813F7-B473-4215-AC2B-EECDC4BB32BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.Api", "ProjectOmega.Api\ProjectOmega.Api.csproj", "{D8FD0E09-D1C1-4201-953A-57238702D81E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.Api", "ProjectOmega.Api\ProjectOmega.Api.csproj", "{D8FD0E09-D1C1-4201-953A-57238702D81E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.Repositories", "ProjectOmega.Repositories\ProjectOmega.Repositories.csproj", "{BF3640CB-989D-46A7-9F0B-91BEF360318D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.Repositories", "ProjectOmega.Repositories\ProjectOmega.Repositories.csproj", "{BF3640CB-989D-46A7-9F0B-91BEF360318D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.Data", "ProjectOmega.Data\ProjectOmega.Data.csproj", "{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.Data", "ProjectOmega.Data\ProjectOmega.Data.csproj", "{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.DAL.Firebird", "ProjectOmega.DAL.Firebird\ProjectOmega.DAL.Firebird.csproj", "{ED58D0B6-18F5-4749-B0CC-887A9ADBB81D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89792492-617D-47D8-BAF9-F781DB80E7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89792492-617D-47D8-BAF9-F781DB80E7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89792492-617D-47D8-BAF9-F781DB80E7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89792492-617D-47D8-BAF9-F781DB80E7ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C7813F7-B473-4215-AC2B-EECDC4BB32BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C7813F7-B473-4215-AC2B-EECDC4BB32BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C7813F7-B473-4215-AC2B-EECDC4BB32BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED58D0B6-18F5-4749-B0CC-887A9ADBB81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED58D0B6-18F5-4749-B0CC-887A9ADBB81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED58D0B6-18F5-4749-B0CC-887A9ADBB81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED58D0B6-18F5-4749-B0CC-887A9ADBB81D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
