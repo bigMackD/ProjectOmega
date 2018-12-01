@@ -10,6 +10,12 @@
         <EntityTypeShape EntityType="Model.R3_CONTACTS" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="Model.R3_CONTACT_PHONES_CONTACT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="Model.R3_CONT_WEB_ADDR_CONTACT_ID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.GM_FS" Width="1.5" PointX="3" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.GM_FZ" Width="1.5" PointX="3" PointY="31.25" />
+        <AssociationConnector Association="Model.GM_FS_AKWIZYTOR_FK" />
+        <AssociationConnector Association="Model.GM_FS_ID_ODBIORCY_FK" />
+        <AssociationConnector Association="Model.GM_FS_ID_PLATNIKA_FK" />
+        <AssociationConnector Association="Model.GM_FZ_ID_DOSTAWCY_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

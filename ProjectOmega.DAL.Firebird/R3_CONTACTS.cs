@@ -18,6 +18,10 @@ namespace ProjectOmega.DAL.Firebird
         {
             this.R3_CONTACT_PHONES = new HashSet<R3_CONTACT_PHONES>();
             this.R3_CONTACT_WEB_ADDRESSES = new HashSet<R3_CONTACT_WEB_ADDRESSES>();
+            this.GM_FS = new HashSet<GM_FS>();
+            this.GM_FS1 = new HashSet<GM_FS>();
+            this.GM_FS2 = new HashSet<GM_FS>();
+            this.GM_FZ = new HashSet<GM_FZ>();
         }
     
         public int ID { get; set; }
@@ -59,5 +63,9 @@ namespace ProjectOmega.DAL.Firebird
     
         public virtual ICollection<R3_CONTACT_PHONES> R3_CONTACT_PHONES { get; set; }
         public virtual ICollection<R3_CONTACT_WEB_ADDRESSES> R3_CONTACT_WEB_ADDRESSES { get; set; }
+        public virtual ICollection<GM_FS> GM_FS { get; set; }
+        public virtual ICollection<GM_FS> GM_FS1 { get; set; }
+        public virtual ICollection<GM_FS> GM_FS2 { get; set; }
+        public virtual ICollection<GM_FZ> GM_FZ { get; set; }
     }
 }
