@@ -52,8 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientsRepository\ClientsRepository.cs" />
-    <Compile Include="ClientsRepository\IClientsRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ClientsRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBaseRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IClientsRepository.cs" />
     <Compile Include="GM_FS.cs">
       <DependentUpon>RaksModel.tt</DependentUpon>
     </Compile>
@@ -62,8 +64,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseInvoiceRepository\IPurchaseInvoiceRepository.cs" />
-    <Compile Include="PurchaseInvoiceRepository\PurchaseInvoiceReopsitory.cs" />
+    <Compile Include="Repositories\Interfaces\IPurchaseInvoiceRepository.cs" />
+    <Compile Include="Repositories\PurchaseInvoiceReopsitory.cs" />
     <Compile Include="R3_CONTACTS.cs">
       <DependentUpon>RaksModel.tt</DependentUpon>
     </Compile>
@@ -88,8 +90,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RaksModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="SalesInvoiceRepository\SalesInvoiceRepository.cs" />
-    <Compile Include="SalesInvoiceRepository\ISalesInvoiceRepository.cs" />
+    <Compile Include="Repositories\SalesInvoiceRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISalesInvoiceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
