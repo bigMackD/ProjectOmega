@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="FirebirdSql.Data.FirebirdClient" ProviderManifestToken="2.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="R3_CONTACT_PHONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NUMBER" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+          <Property Name="TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="CONTACT_ID" Type="int" Nullable="false" />
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="R3_CONTACT_WEB_ADDRESSES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="60" Unicode="true" Nullable="false" />
+          <Property Name="DEFAULT_ADDRESS" Type="smallint" Nullable="false" />
+          <Property Name="TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="CONTACT_ID" Type="int" Nullable="false" />
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="R3_CONTACTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="varchar" MaxLength="50" Unicode="true" Nullable="false" />
+          <Property Name="GROUP_ID" Type="int" />
+          <Property Name="CONTACT_TYPE" Type="smallint" Nullable="false" />
+          <Property Name="TAXID" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="APARTMENT_NUMBER" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="PROVINCE" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="DESCRIPTION_ID" Type="int" Nullable="false" />
+          <Property Name="ADDRESS_ID" Type="int" />
+          <Property Name="INTERNAL_REVENUE_ID" Type="int" />
+          <Property Name="BARCODE" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="CURRENCY_ID" Type="int" />
+          <Property Name="CANVASSER" Type="smallint" Nullable="false" />
+          <Property Name="DELIVERER" Type="smallint" Nullable="false" />
+          <Property Name="PURCHASER" Type="smallint" Nullable="false" />
+          <Property Name="CANVASSER_ACCOUNT" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="STREET" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="FULL_NAME" Type="varchar" MaxLength="200" Unicode="true" Nullable="false" />
+          <Property Name="PLACE" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="COUNTRY" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="BUILDING_NUMBER" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="ZIPCODE" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="C_DATE" Type="timestamp" Nullable="false" />
+          <Property Name="M_DATE" Type="timestamp" />
+          <Property Name="C_IDENT" Type="varchar" MaxLength="8" Unicode="true" Nullable="false" />
+          <Property Name="M_IDENT" Type="varchar" MaxLength="8" Unicode="true" />
+          <Property Name="EU_CODE" Type="varchar" MaxLength="2" Unicode="true" />
+          <Property Name="CURRENCY_CODE" Type="varchar" MaxLength="3" Unicode="true" />
+          <Property Name="GUID" Type="char" MaxLength="36" Unicode="false" />
+          <Property Name="POWIAT" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="GMINA" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="KOD_GMINY_WG_GUS" Type="varchar" MaxLength="7" Unicode="true" />
+          <Property Name="ARCHIWALNY" Type="smallint" Nullable="false" />
+          <Property Name="POCZTA" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="ID_REGIONU" Type="int" />
+          <Property Name="GLN" Type="varchar" MaxLength="13" Unicode="true" />
+        </EntityType>
+        <Association Name="R3_CONT_WEB_ADDR_CONTACT_ID">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="R3_CONTACT_WEB_ADDRESSES" Type="Self.R3_CONTACT_WEB_ADDRESSES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="R3_CONTACT_WEB_ADDRESSES">
+              <PropertyRef Name="CONTACT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R3_CONTACT_PHONES_CONTACT_ID_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="R3_CONTACT_PHONES" Type="Self.R3_CONTACT_PHONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="R3_CONTACT_PHONES">
+              <PropertyRef Name="CONTACT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="R3_CONTACT_PHONES" EntityType="Self.R3_CONTACT_PHONES" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="R3_CONTACT_WEB_ADDRESSES" EntityType="Self.R3_CONTACT_WEB_ADDRESSES" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="R3_CONTACTS" EntityType="Self.R3_CONTACTS" Schema="Firebird" store:Type="Tables" />
+          <AssociationSet Name="R3_CONT_WEB_ADDR_CONTACT_ID" Association="Self.R3_CONT_WEB_ADDR_CONTACT_ID">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="R3_CONTACT_WEB_ADDRESSES" EntitySet="R3_CONTACT_WEB_ADDRESSES" />
+          </AssociationSet>
+          <AssociationSet Name="R3_CONTACT_PHONES_CONTACT_ID_FK" Association="Self.R3_CONTACT_PHONES_CONTACT_ID_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="R3_CONTACT_PHONES" EntitySet="R3_CONTACT_PHONES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="R3_CONTACT_PHONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="CONTACT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="R3_CONTACTS" Relationship="Self.R3_CONTACT_PHONES_CONTACT_ID_FK" FromRole="R3_CONTACT_PHONES" ToRole="R3_CONTACTS" />
+        </EntityType>
+        <EntityType Name="R3_CONTACT_WEB_ADDRESSES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DEFAULT_ADDRESS" Type="Int16" Nullable="false" />
+          <Property Name="TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="CONTACT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="R3_CONTACTS" Relationship="Self.R3_CONT_WEB_ADDR_CONTACT_ID" FromRole="R3_CONTACT_WEB_ADDRESSES" ToRole="R3_CONTACTS" />
+        </EntityType>
+        <EntityType Name="R3_CONTACTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GROUP_ID" Type="Int32" />
+          <Property Name="CONTACT_TYPE" Type="Int16" Nullable="false" />
+          <Property Name="TAXID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="APARTMENT_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PROVINCE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION_ID" Type="Int32" Nullable="false" />
+          <Property Name="ADDRESS_ID" Type="Int32" />
+          <Property Name="INTERNAL_REVENUE_ID" Type="Int32" />
+          <Property Name="BARCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY_ID" Type="Int32" />
+          <Property Name="CANVASSER" Type="Int16" Nullable="false" />
+          <Property Name="DELIVERER" Type="Int16" Nullable="false" />
+          <Property Name="PURCHASER" Type="Int16" Nullable="false" />
+          <Property Name="CANVASSER_ACCOUNT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FULL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PLACE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BUILDING_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="C_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="M_DATE" Type="DateTime" />
+          <Property Name="C_IDENT" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_IDENT" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="EU_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="true" />
+          <Property Name="POWIAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GMINA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_GMINY_WG_GUS" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="ARCHIWALNY" Type="Int16" Nullable="false" />
+          <Property Name="POCZTA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ID_REGIONU" Type="Int32" />
+          <Property Name="GLN" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="R3_CONTACT_PHONES" Relationship="Self.R3_CONTACT_PHONES_CONTACT_ID_FK" FromRole="R3_CONTACTS" ToRole="R3_CONTACT_PHONES" />
+          <NavigationProperty Name="R3_CONTACT_WEB_ADDRESSES" Relationship="Self.R3_CONT_WEB_ADDR_CONTACT_ID" FromRole="R3_CONTACTS" ToRole="R3_CONTACT_WEB_ADDRESSES" />
+        </EntityType>
+        <Association Name="R3_CONTACT_PHONES_CONTACT_ID_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="R3_CONTACT_PHONES" Type="Self.R3_CONTACT_PHONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="R3_CONTACT_PHONES">
+              <PropertyRef Name="CONTACT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R3_CONT_WEB_ADDR_CONTACT_ID">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="R3_CONTACT_WEB_ADDRESSES" Type="Self.R3_CONTACT_WEB_ADDRESSES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="R3_CONTACT_WEB_ADDRESSES">
+              <PropertyRef Name="CONTACT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RaksConnectionString" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="R3_CONTACT_PHONES" EntityType="Self.R3_CONTACT_PHONES" />
+          <EntitySet Name="R3_CONTACT_WEB_ADDRESSES" EntityType="Self.R3_CONTACT_WEB_ADDRESSES" />
+          <EntitySet Name="R3_CONTACTS" EntityType="Self.R3_CONTACTS" />
+          <AssociationSet Name="R3_CONTACT_PHONES_CONTACT_ID_FK" Association="Self.R3_CONTACT_PHONES_CONTACT_ID_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="R3_CONTACT_PHONES" EntitySet="R3_CONTACT_PHONES" />
+          </AssociationSet>
+          <AssociationSet Name="R3_CONT_WEB_ADDR_CONTACT_ID" Association="Self.R3_CONT_WEB_ADDR_CONTACT_ID">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="R3_CONTACT_WEB_ADDRESSES" EntitySet="R3_CONTACT_WEB_ADDRESSES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="RaksConnectionString">
+          <EntitySetMapping Name="R3_CONTACT_PHONES">
+            <EntityTypeMapping TypeName="Model.R3_CONTACT_PHONES">
+              <MappingFragment StoreEntitySet="R3_CONTACT_PHONES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R3_CONTACT_WEB_ADDRESSES">
+            <EntityTypeMapping TypeName="Model.R3_CONTACT_WEB_ADDRESSES">
+              <MappingFragment StoreEntitySet="R3_CONTACT_WEB_ADDRESSES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="DEFAULT_ADDRESS" ColumnName="DEFAULT_ADDRESS" />
+                <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R3_CONTACTS">
+            <EntityTypeMapping TypeName="Model.R3_CONTACTS">
+              <MappingFragment StoreEntitySet="R3_CONTACTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="CONTACT_TYPE" ColumnName="CONTACT_TYPE" />
+                <ScalarProperty Name="TAXID" ColumnName="TAXID" />
+                <ScalarProperty Name="APARTMENT_NUMBER" ColumnName="APARTMENT_NUMBER" />
+                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+                <ScalarProperty Name="DESCRIPTION_ID" ColumnName="DESCRIPTION_ID" />
+                <ScalarProperty Name="ADDRESS_ID" ColumnName="ADDRESS_ID" />
+                <ScalarProperty Name="INTERNAL_REVENUE_ID" ColumnName="INTERNAL_REVENUE_ID" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="CURRENCY_ID" ColumnName="CURRENCY_ID" />
+                <ScalarProperty Name="CANVASSER" ColumnName="CANVASSER" />
+                <ScalarProperty Name="DELIVERER" ColumnName="DELIVERER" />
+                <ScalarProperty Name="PURCHASER" ColumnName="PURCHASER" />
+                <ScalarProperty Name="CANVASSER_ACCOUNT" ColumnName="CANVASSER_ACCOUNT" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+                <ScalarProperty Name="PLACE" ColumnName="PLACE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="BUILDING_NUMBER" ColumnName="BUILDING_NUMBER" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="C_DATE" ColumnName="C_DATE" />
+                <ScalarProperty Name="M_DATE" ColumnName="M_DATE" />
+                <ScalarProperty Name="C_IDENT" ColumnName="C_IDENT" />
+                <ScalarProperty Name="M_IDENT" ColumnName="M_IDENT" />
+                <ScalarProperty Name="EU_CODE" ColumnName="EU_CODE" />
+                <ScalarProperty Name="CURRENCY_CODE" ColumnName="CURRENCY_CODE" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="POWIAT" ColumnName="POWIAT" />
+                <ScalarProperty Name="GMINA" ColumnName="GMINA" />
+                <ScalarProperty Name="KOD_GMINY_WG_GUS" ColumnName="KOD_GMINY_WG_GUS" />
+                <ScalarProperty Name="ARCHIWALNY" ColumnName="ARCHIWALNY" />
+                <ScalarProperty Name="POCZTA" ColumnName="POCZTA" />
+                <ScalarProperty Name="ID_REGIONU" ColumnName="ID_REGIONU" />
+                <ScalarProperty Name="GLN" ColumnName="GLN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
