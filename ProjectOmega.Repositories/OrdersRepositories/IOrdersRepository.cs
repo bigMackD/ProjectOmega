@@ -8,5 +8,6 @@ namespace ProjectOmega.Repositories.OrdersRepositories
         void Create(AddOrderModel order);
         void Update(EditOrderModel order);
         IEnumerable<OrderModel> GetAll();
+        OrderModel GetById(long id);
     }
 }
