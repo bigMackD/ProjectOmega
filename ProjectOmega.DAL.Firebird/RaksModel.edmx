@@ -5,6 +5,174 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Model.Store" Provider="FirebirdSql.Data.FirebirdClient" ProviderManifestToken="2.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GM_FS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MAGNUM" Type="int" Nullable="false" />
+          <Property Name="TYP_DOK_MAGAZYNOWEGO" Type="varchar" MaxLength="3" Unicode="true" Nullable="false" />
+          <Property Name="KOD" Type="varchar" MaxLength="5" Unicode="true" />
+          <Property Name="DATA_WYSTAWIENIA" Type="date" Nullable="false" />
+          <Property Name="ROK" Type="smallint" Nullable="false" />
+          <Property Name="MIESIAC" Type="smallint" Nullable="false" />
+          <Property Name="NR" Type="int" Nullable="false" />
+          <Property Name="NUMER" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+          <Property Name="BLOKADA" Type="smallint" Nullable="false" />
+          <Property Name="FISKALNY" Type="smallint" Nullable="false" />
+          <Property Name="SPOSOB_LICZENIA" Type="smallint" Nullable="false" />
+          <Property Name="RODZAJ_CENY" Type="int" />
+          <Property Name="RODZAJ_RABATU" Type="int" />
+          <Property Name="ID_TABELI_KURSOWEJ" Type="int" />
+          <Property Name="ID_WALUTY" Type="int" Nullable="false" />
+          <Property Name="KURS" Type="numeric" Precision="15" Scale="8" />
+          <Property Name="DATA_PLATNOSCI" Type="date" />
+          <Property Name="DATA_SPRZEDAZY" Type="date" />
+          <Property Name="NUMER_TABELI_KURSOWEJ" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="NAZWA_DOKUMENTU" Type="varchar" MaxLength="250" Unicode="true" Nullable="false" />
+          <Property Name="ID_PLATNIKA" Type="int" />
+          <Property Name="ID_ODBIORCY" Type="int" />
+          <Property Name="NAZWA_SKROCONA_PLATNIKA" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="NAZWA_PELNA_PLATNIKA" Type="varchar" MaxLength="250" Unicode="true" />
+          <Property Name="NIP_PLATNIKA" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="KOD_KRESKOWY_PLATNIKA" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="ULICA_PLATNIKA" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="NRDOMU_PLATNIKA" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="NRLOKALU_PLATNIKA" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_PLATNIKA" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="KOD_PLATNIKA" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="PANSTWO_PLATNIKA" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="NAZWA_SKROCONA_ODBIORCY" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="NAZWA_PELNA_ODBIORCY" Type="varchar" MaxLength="250" Unicode="true" />
+          <Property Name="NIP_ODBIORCY" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="KOD_KRESKOWY_ODBIORCY" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="ULICA_ODBIORCY" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="NRDOMU_ODBIORCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="NRLOKALU_ODBIORCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_ODBIORCY" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="KOD_ODBIORCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="PANSTWO_ODBIORCY" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="ID_AKWIZYTORA" Type="int" />
+          <Property Name="PROWIZJA_AKWIZYTORA" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="NAZWISKO_PRZEDSTAWICIELA" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="WAL_WARTOSC_NETTO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WAL_KWOTA_VAT" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WAL_WARTOSC_BRUTTO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PLN_WARTOSC_NETTO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WARTOSC_ZAKUPU" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WARTOSC_ZAKUPU_KAUCJ" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WAL_WARTOSC_KAUCJ" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PLN_WARTOSC_KAUCJ" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OPERATOR" Type="varchar" MaxLength="15" Unicode="true" />
+          <Property Name="DATAREJESTRACJI" Type="timestamp" Nullable="false" />
+          <Property Name="ZMIENIL" Type="varchar" MaxLength="15" Unicode="true" />
+          <Property Name="DATAZMIANY" Type="timestamp" Nullable="false" />
+          <Property Name="DATA_FS_DO_PA" Type="date" />
+          <Property Name="ROK_FS_DO_PA" Type="smallint" Nullable="false" />
+          <Property Name="MIESIAC_FS_DO_PA" Type="smallint" Nullable="false" />
+          <Property Name="NR_FS_DO_PA" Type="int" />
+          <Property Name="NUMER_FS_DO_PA" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="NAZWA_FS_DO_PA" Type="varchar" MaxLength="250" Unicode="true" />
+          <Property Name="WARTOSC_ROZRACHUNKU" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SYGNATURA" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="ZNACZNIKI" Type="varchar" MaxLength="250" Unicode="true" />
+          <Property Name="GRUPOWANIE" Type="char" MaxLength="10" Unicode="false" />
+          <Property Name="PLN_KWOTA_VAT" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PLN_WARTOSC_BRUTTO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="MAGAZYNOWY" Type="smallint" Nullable="false" />
+          <Property Name="UWAGI" Type="blob" />
+          <Property Name="TRANSAKCJA_TROJSTRONNA" Type="smallint" Nullable="false" />
+          <Property Name="KOD_KRAJU_PRZEZNACZENIA" Type="int" />
+          <Property Name="KOD_WARUNKOW_DOSTAWY" Type="int" />
+          <Property Name="KOD_RODZAJU_TRANSPORTU" Type="int" />
+          <Property Name="KOD_RODZAJU_TRANSAKCJI" Type="int" />
+          <Property Name="ID_WNTT" Type="int" />
+          <Property Name="GUID" Type="char" MaxLength="36" Unicode="false" />
+          <Property Name="DF_NAME" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="ID_RDS" Type="int" />
+          <Property Name="ID_SPOSOBU_PLATNOSCI" Type="int" />
+          <Property Name="NAZWA_SPOSOBU_PLATNOSCI" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="DOSTAWA_ID_ADRESU" Type="int" />
+          <Property Name="DOSTAWA_ULICA" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="DOSTAWA_NR_DOMU" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="DOSTAWA_NR_LOKALU" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="DOSTAWA_KOD_POCZTOWY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="DOSTAWA_MIEJSCOWOSC" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="DOSTAWA_PANSTWO" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="ID_SP_DOSTAWY" Type="int" />
+          <Property Name="TERMIN_DOSTAWY" Type="date" />
+          <Property Name="DOSTAWA_INCOTERMS_SKROT" Type="varchar" MaxLength="3" Unicode="true" />
+          <Property Name="DOSTAWA_INCOTERMS_CEL" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="DD_NUMERU" Type="smallint" />
+          <Property Name="GLN_PLATNIKA" Type="varchar" MaxLength="13" Unicode="true" />
+          <Property Name="GLN_ODBIORCY" Type="varchar" MaxLength="13" Unicode="true" />
+          <Property Name="DOSTAWA_GLN" Type="varchar" MaxLength="13" Unicode="true" />
+          <Property Name="CZY_METODA_KASOWA" Type="smallint" Nullable="false" />
+          <Property Name="ID_PODSTAWY_ZWOL_VAT" Type="int" />
+        </EntityType>
+        <EntityType Name="GM_FZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MAGNUM" Type="int" Nullable="false" />
+          <Property Name="KOD" Type="varchar" MaxLength="5" Unicode="true" Nullable="false" />
+          <Property Name="DATA_WYSTAWIENIA" Type="date" Nullable="false" />
+          <Property Name="ROK" Type="smallint" Nullable="false" />
+          <Property Name="MIESIAC" Type="smallint" Nullable="false" />
+          <Property Name="NR" Type="int" Nullable="false" />
+          <Property Name="NUMER" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+          <Property Name="BLOKADA" Type="smallint" Nullable="false" />
+          <Property Name="ID_SPOSOBU_PLATNOSCI" Type="int" Nullable="false" />
+          <Property Name="DATA_PLATNOSCI" Type="date" Nullable="false" />
+          <Property Name="NAZWA_SPOSOBU_PLATNOSCI" Type="varchar" MaxLength="100" Unicode="true" Nullable="false" />
+          <Property Name="DATA_OTRZYMANIA_FAKTURY" Type="date" Nullable="false" />
+          <Property Name="ID_DOSTAWCY" Type="int" Nullable="false" />
+          <Property Name="NR_FAKTURY_DOSTAWCY" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="NAZWA_SKROCONA_DOSTAWCY" Type="varchar" MaxLength="50" Unicode="true" Nullable="false" />
+          <Property Name="NIP_DOSTAWCY" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="KOD_KRESKOWY" Type="varchar" MaxLength="40" Unicode="true" />
+          <Property Name="NAZWA_PELNA_DOSTAWCY" Type="varchar" MaxLength="250" Unicode="true" Nullable="false" />
+          <Property Name="ULICA_DOSTAWCY" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="NRLOKALU_DOSTAWCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="KOD_DOSTAWCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_DOSTAWCY" Type="varchar" MaxLength="50" Unicode="true" />
+          <Property Name="PESEL_DOSTAWCY" Type="varchar" MaxLength="11" Unicode="true" />
+          <Property Name="NUMER_DOWODU_DOSTAWCY" Type="varchar" MaxLength="15" Unicode="true" />
+          <Property Name="DATA_DOWODU_DOSTAWCY" Type="date" />
+          <Property Name="ORGAN_DOWODU_DOSTAWCY" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="ROLNIKR" Type="smallint" Nullable="false" />
+          <Property Name="PANSTWO_DOSTAWCY" Type="varchar" MaxLength="25" Unicode="true" />
+          <Property Name="PLN_KWOTA_VAT_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PLN_WARTOSC_BRUTTO_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PLN_WARTOSC_NETTO_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="NAZWA_DOKUMENTU" Type="varchar" MaxLength="250" Unicode="true" Nullable="false" />
+          <Property Name="OPERATOR" Type="varchar" MaxLength="15" Unicode="true" Nullable="false" />
+          <Property Name="DATAREJESTRACJI" Type="timestamp" Nullable="false" />
+          <Property Name="ZMIENIL" Type="varchar" MaxLength="15" Unicode="true" Nullable="false" />
+          <Property Name="DATAZMIANY" Type="timestamp" Nullable="false" />
+          <Property Name="DATA_DOWODU" Type="date" Nullable="false" />
+          <Property Name="SPOSOB_LICZENIA" Type="smallint" Nullable="false" />
+          <Property Name="NRDOMU_DOSTAWCY" Type="varchar" MaxLength="10" Unicode="true" />
+          <Property Name="WARTOSC_ROZRACHUNKU" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="SYGNATURA" Type="varchar" MaxLength="100" Unicode="true" />
+          <Property Name="ZNACZNIKI" Type="varchar" MaxLength="250" Unicode="true" />
+          <Property Name="UWAGI" Type="blob" />
+          <Property Name="ID_TABELI_KURSOWEJ" Type="int" />
+          <Property Name="ID_WALUTY" Type="int" Nullable="false" />
+          <Property Name="KURS" Type="numeric" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="NUMER_TABELI_KURSOWEJ" Type="varchar" MaxLength="20" Unicode="true" />
+          <Property Name="WAL_WARTOSC_NETTO_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WAL_KWOTA_VAT_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WAL_WARTOSC_BRUTTO_PO" Type="numeric" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="MAGAZYNOWY" Type="smallint" Nullable="false" />
+          <Property Name="TYP_DOK_MAGAZYNOWEGO" Type="varchar" MaxLength="3" Unicode="true" Nullable="false" />
+          <Property Name="NUMER_SAD" Type="varchar" MaxLength="30" Unicode="true" />
+          <Property Name="DATA_SAD" Type="date" Nullable="false" />
+          <Property Name="DATA_OTRZYMANIA_SAD" Type="date" />
+          <Property Name="GUID" Type="char" MaxLength="36" Unicode="false" />
+          <Property Name="ID_PODSTAWY_ZWOL_VAT" Type="int" />
+        </EntityType>
         <EntityType Name="R3_CONTACT_PHONES">
           <Key>
             <PropertyRef Name="ID" />
@@ -67,6 +235,54 @@
           <Property Name="ID_REGIONU" Type="int" />
           <Property Name="GLN" Type="varchar" MaxLength="13" Unicode="true" />
         </EntityType>
+        <Association Name="GM_FS_AKWIZYTOR_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="0..1" />
+          <End Role="GM_FS" Type="Self.GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_AKWIZYTORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FS_ID_ODBIORCY_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="0..1" />
+          <End Role="GM_FS" Type="Self.GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FS_ID_PLATNIKA_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="0..1" />
+          <End Role="GM_FS" Type="Self.GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_PLATNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FZ_ID_DOSTAWCY_FK">
+          <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1" />
+          <End Role="GM_FZ" Type="Self.GM_FZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FZ">
+              <PropertyRef Name="ID_DOSTAWCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="R3_CONT_WEB_ADDR_CONTACT_ID">
           <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -96,9 +312,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="GM_FS" EntityType="Self.GM_FS" Schema="Firebird" store:Type="Tables" />
+          <EntitySet Name="GM_FZ" EntityType="Self.GM_FZ" Schema="Firebird" store:Type="Tables" />
           <EntitySet Name="R3_CONTACT_PHONES" EntityType="Self.R3_CONTACT_PHONES" Schema="Firebird" store:Type="Tables" />
           <EntitySet Name="R3_CONTACT_WEB_ADDRESSES" EntityType="Self.R3_CONTACT_WEB_ADDRESSES" Schema="Firebird" store:Type="Tables" />
           <EntitySet Name="R3_CONTACTS" EntityType="Self.R3_CONTACTS" Schema="Firebird" store:Type="Tables" />
+          <AssociationSet Name="GM_FS_AKWIZYTOR_FK" Association="Self.GM_FS_AKWIZYTOR_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FS_ID_ODBIORCY_FK" Association="Self.GM_FS_ID_ODBIORCY_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FS_ID_PLATNIKA_FK" Association="Self.GM_FS_ID_PLATNIKA_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FZ_ID_DOSTAWCY_FK" Association="Self.GM_FZ_ID_DOSTAWCY_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FZ" EntitySet="GM_FZ" />
+          </AssociationSet>
           <AssociationSet Name="R3_CONT_WEB_ADDR_CONTACT_ID" Association="Self.R3_CONT_WEB_ADDR_CONTACT_ID">
             <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
             <End Role="R3_CONTACT_WEB_ADDRESSES" EntitySet="R3_CONTACT_WEB_ADDRESSES" />
@@ -177,6 +411,10 @@
           <Property Name="GLN" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="R3_CONTACT_PHONES" Relationship="Self.R3_CONTACT_PHONES_CONTACT_ID_FK" FromRole="R3_CONTACTS" ToRole="R3_CONTACT_PHONES" />
           <NavigationProperty Name="R3_CONTACT_WEB_ADDRESSES" Relationship="Self.R3_CONT_WEB_ADDR_CONTACT_ID" FromRole="R3_CONTACTS" ToRole="R3_CONTACT_WEB_ADDRESSES" />
+          <NavigationProperty Name="GM_FS" Relationship="Model.GM_FS_AKWIZYTOR_FK" FromRole="R3_CONTACTS" ToRole="GM_FS" />
+          <NavigationProperty Name="GM_FS1" Relationship="Model.GM_FS_ID_ODBIORCY_FK" FromRole="R3_CONTACTS" ToRole="GM_FS" />
+          <NavigationProperty Name="GM_FS2" Relationship="Model.GM_FS_ID_PLATNIKA_FK" FromRole="R3_CONTACTS" ToRole="GM_FS" />
+          <NavigationProperty Name="GM_FZ" Relationship="Model.GM_FZ_ID_DOSTAWCY_FK" FromRole="R3_CONTACTS" ToRole="GM_FZ" />
         </EntityType>
         <Association Name="R3_CONTACT_PHONES_CONTACT_ID_FK">
           <End Role="R3_CONTACTS" Type="Self.R3_CONTACTS" Multiplicity="1">
@@ -218,7 +456,245 @@
             <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
             <End Role="R3_CONTACT_WEB_ADDRESSES" EntitySet="R3_CONTACT_WEB_ADDRESSES" />
           </AssociationSet>
+          <EntitySet Name="GM_FS" EntityType="Model.GM_FS" />
+          <EntitySet Name="GM_FZ" EntityType="Model.GM_FZ" />
+          <AssociationSet Name="GM_FS_AKWIZYTOR_FK" Association="Model.GM_FS_AKWIZYTOR_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FS_ID_ODBIORCY_FK" Association="Model.GM_FS_ID_ODBIORCY_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FS_ID_PLATNIKA_FK" Association="Model.GM_FS_ID_PLATNIKA_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FS" EntitySet="GM_FS" />
+          </AssociationSet>
+          <AssociationSet Name="GM_FZ_ID_DOSTAWCY_FK" Association="Model.GM_FZ_ID_DOSTAWCY_FK">
+            <End Role="R3_CONTACTS" EntitySet="R3_CONTACTS" />
+            <End Role="GM_FZ" EntitySet="GM_FZ" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="GM_FS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="MAGNUM" Type="Int32" Nullable="false" />
+          <Property Name="TYP_DOK_MAGAZYNOWEGO" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="KOD" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_WYSTAWIENIA" Type="DateTime" Nullable="false" />
+          <Property Name="ROK" Type="Int16" Nullable="false" />
+          <Property Name="MIESIAC" Type="Int16" Nullable="false" />
+          <Property Name="NR" Type="Int32" Nullable="false" />
+          <Property Name="NUMER" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BLOKADA" Type="Int16" Nullable="false" />
+          <Property Name="FISKALNY" Type="Int16" Nullable="false" />
+          <Property Name="SPOSOB_LICZENIA" Type="Int16" Nullable="false" />
+          <Property Name="RODZAJ_CENY" Type="Int32" />
+          <Property Name="RODZAJ_RABATU" Type="Int32" />
+          <Property Name="ID_TABELI_KURSOWEJ" Type="Int32" />
+          <Property Name="ID_WALUTY" Type="Int32" Nullable="false" />
+          <Property Name="KURS" Type="Decimal" Precision="15" Scale="8" />
+          <Property Name="DATA_PLATNOSCI" Type="DateTime" />
+          <Property Name="DATA_SPRZEDAZY" Type="DateTime" />
+          <Property Name="NUMER_TABELI_KURSOWEJ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_DOKUMENTU" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ID_PLATNIKA" Type="Int32" />
+          <Property Name="ID_ODBIORCY" Type="Int32" />
+          <Property Name="NAZWA_SKROCONA_PLATNIKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_PELNA_PLATNIKA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NIP_PLATNIKA" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_KRESKOWY_PLATNIKA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ULICA_PLATNIKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NRDOMU_PLATNIKA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NRLOKALU_PLATNIKA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_PLATNIKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_PLATNIKA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PANSTWO_PLATNIKA" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_SKROCONA_ODBIORCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_PELNA_ODBIORCY" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NIP_ODBIORCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_KRESKOWY_ODBIORCY" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ULICA_ODBIORCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NRDOMU_ODBIORCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NRLOKALU_ODBIORCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_ODBIORCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_ODBIORCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PANSTWO_ODBIORCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ID_AKWIZYTORA" Type="Int32" />
+          <Property Name="PROWIZJA_AKWIZYTORA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="NAZWISKO_PRZEDSTAWICIELA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WAL_WARTOSC_NETTO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WAL_KWOTA_VAT" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WAL_WARTOSC_BRUTTO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PLN_WARTOSC_NETTO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WARTOSC_ZAKUPU" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WARTOSC_ZAKUPU_KAUCJ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WAL_WARTOSC_KAUCJ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PLN_WARTOSC_KAUCJ" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="OPERATOR" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DATAREJESTRACJI" Type="DateTime" Nullable="false" />
+          <Property Name="ZMIENIL" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DATAZMIANY" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_FS_DO_PA" Type="DateTime" />
+          <Property Name="ROK_FS_DO_PA" Type="Int16" Nullable="false" />
+          <Property Name="MIESIAC_FS_DO_PA" Type="Int16" Nullable="false" />
+          <Property Name="NR_FS_DO_PA" Type="Int32" />
+          <Property Name="NUMER_FS_DO_PA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_FS_DO_PA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WARTOSC_ROZRACHUNKU" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="SYGNATURA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZNACZNIKI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GRUPOWANIE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PLN_KWOTA_VAT" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PLN_WARTOSC_BRUTTO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="MAGAZYNOWY" Type="Int16" Nullable="false" />
+          <Property Name="UWAGI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TRANSAKCJA_TROJSTRONNA" Type="Int16" Nullable="false" />
+          <Property Name="KOD_KRAJU_PRZEZNACZENIA" Type="Int32" />
+          <Property Name="KOD_WARUNKOW_DOSTAWY" Type="Int32" />
+          <Property Name="KOD_RODZAJU_TRANSPORTU" Type="Int32" />
+          <Property Name="KOD_RODZAJU_TRANSAKCJI" Type="Int32" />
+          <Property Name="ID_WNTT" Type="Int32" />
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="true" />
+          <Property Name="DF_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ID_RDS" Type="Int32" />
+          <Property Name="ID_SPOSOBU_PLATNOSCI" Type="Int32" />
+          <Property Name="NAZWA_SPOSOBU_PLATNOSCI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_ID_ADRESU" Type="Int32" />
+          <Property Name="DOSTAWA_ULICA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_NR_DOMU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_NR_LOKALU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_KOD_POCZTOWY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_MIEJSCOWOSC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_PANSTWO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ID_SP_DOSTAWY" Type="Int32" />
+          <Property Name="TERMIN_DOSTAWY" Type="DateTime" />
+          <Property Name="DOSTAWA_INCOTERMS_SKROT" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_INCOTERMS_CEL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DD_NUMERU" Type="Int16" />
+          <Property Name="GLN_PLATNIKA" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="GLN_ODBIORCY" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="DOSTAWA_GLN" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="CZY_METODA_KASOWA" Type="Int16" Nullable="false" />
+          <Property Name="ID_PODSTAWY_ZWOL_VAT" Type="Int32" />
+          <NavigationProperty Name="R3_CONTACTS" Relationship="Model.GM_FS_AKWIZYTOR_FK" FromRole="GM_FS" ToRole="R3_CONTACTS" />
+          <NavigationProperty Name="R3_CONTACTS1" Relationship="Model.GM_FS_ID_ODBIORCY_FK" FromRole="GM_FS" ToRole="R3_CONTACTS" />
+          <NavigationProperty Name="R3_CONTACTS2" Relationship="Model.GM_FS_ID_PLATNIKA_FK" FromRole="GM_FS" ToRole="R3_CONTACTS" />
+        </EntityType>
+        <EntityType Name="GM_FZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="MAGNUM" Type="Int32" Nullable="false" />
+          <Property Name="KOD" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_WYSTAWIENIA" Type="DateTime" Nullable="false" />
+          <Property Name="ROK" Type="Int16" Nullable="false" />
+          <Property Name="MIESIAC" Type="Int16" Nullable="false" />
+          <Property Name="NR" Type="Int32" Nullable="false" />
+          <Property Name="NUMER" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BLOKADA" Type="Int16" Nullable="false" />
+          <Property Name="ID_SPOSOBU_PLATNOSCI" Type="Int32" Nullable="false" />
+          <Property Name="DATA_PLATNOSCI" Type="DateTime" Nullable="false" />
+          <Property Name="NAZWA_SPOSOBU_PLATNOSCI" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_OTRZYMANIA_FAKTURY" Type="DateTime" Nullable="false" />
+          <Property Name="ID_DOSTAWCY" Type="Int32" Nullable="false" />
+          <Property Name="NR_FAKTURY_DOSTAWCY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_SKROCONA_DOSTAWCY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NIP_DOSTAWCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_KRESKOWY" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA_PELNA_DOSTAWCY" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ULICA_DOSTAWCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NRLOKALU_DOSTAWCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KOD_DOSTAWCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MIEJSCOWOSC_DOSTAWCY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PESEL_DOSTAWCY" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="NUMER_DOWODU_DOSTAWCY" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_DOWODU_DOSTAWCY" Type="DateTime" />
+          <Property Name="ORGAN_DOWODU_DOSTAWCY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROLNIKR" Type="Int16" Nullable="false" />
+          <Property Name="PANSTWO_DOSTAWCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PLN_KWOTA_VAT_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PLN_WARTOSC_BRUTTO_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PLN_WARTOSC_NETTO_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="NAZWA_DOKUMENTU" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OPERATOR" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DATAREJESTRACJI" Type="DateTime" Nullable="false" />
+          <Property Name="ZMIENIL" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DATAZMIANY" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_DOWODU" Type="DateTime" Nullable="false" />
+          <Property Name="SPOSOB_LICZENIA" Type="Int16" Nullable="false" />
+          <Property Name="NRDOMU_DOSTAWCY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WARTOSC_ROZRACHUNKU" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="SYGNATURA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZNACZNIKI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UWAGI" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ID_TABELI_KURSOWEJ" Type="Int32" />
+          <Property Name="ID_WALUTY" Type="Int32" Nullable="false" />
+          <Property Name="KURS" Type="Decimal" Nullable="false" Precision="15" Scale="8" />
+          <Property Name="NUMER_TABELI_KURSOWEJ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WAL_WARTOSC_NETTO_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WAL_KWOTA_VAT_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WAL_WARTOSC_BRUTTO_PO" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="MAGAZYNOWY" Type="Int16" Nullable="false" />
+          <Property Name="TYP_DOK_MAGAZYNOWEGO" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="NUMER_SAD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_SAD" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_OTRZYMANIA_SAD" Type="DateTime" />
+          <Property Name="GUID" Type="String" MaxLength="36" FixedLength="true" Unicode="true" />
+          <Property Name="ID_PODSTAWY_ZWOL_VAT" Type="Int32" />
+          <NavigationProperty Name="R3_CONTACTS" Relationship="Model.GM_FZ_ID_DOSTAWCY_FK" FromRole="GM_FZ" ToRole="R3_CONTACTS" />
+        </EntityType>
+        <Association Name="GM_FS_AKWIZYTOR_FK">
+          <End Type="Model.R3_CONTACTS" Role="R3_CONTACTS" Multiplicity="0..1" />
+          <End Type="Model.GM_FS" Role="GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_AKWIZYTORA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FS_ID_ODBIORCY_FK">
+          <End Type="Model.R3_CONTACTS" Role="R3_CONTACTS" Multiplicity="0..1" />
+          <End Type="Model.GM_FS" Role="GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FS_ID_PLATNIKA_FK">
+          <End Type="Model.R3_CONTACTS" Role="R3_CONTACTS" Multiplicity="0..1" />
+          <End Type="Model.GM_FS" Role="GM_FS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FS">
+              <PropertyRef Name="ID_PLATNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GM_FZ_ID_DOSTAWCY_FK">
+          <End Type="Model.R3_CONTACTS" Role="R3_CONTACTS" Multiplicity="1" />
+          <End Type="Model.GM_FZ" Role="GM_FZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="R3_CONTACTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GM_FZ">
+              <PropertyRef Name="ID_DOSTAWCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -287,6 +763,176 @@
                 <ScalarProperty Name="POCZTA" ColumnName="POCZTA" />
                 <ScalarProperty Name="ID_REGIONU" ColumnName="ID_REGIONU" />
                 <ScalarProperty Name="GLN" ColumnName="GLN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GM_FS">
+            <EntityTypeMapping TypeName="Model.GM_FS">
+              <MappingFragment StoreEntitySet="GM_FS">
+                <ScalarProperty Name="ID_PODSTAWY_ZWOL_VAT" ColumnName="ID_PODSTAWY_ZWOL_VAT" />
+                <ScalarProperty Name="CZY_METODA_KASOWA" ColumnName="CZY_METODA_KASOWA" />
+                <ScalarProperty Name="DOSTAWA_GLN" ColumnName="DOSTAWA_GLN" />
+                <ScalarProperty Name="GLN_ODBIORCY" ColumnName="GLN_ODBIORCY" />
+                <ScalarProperty Name="GLN_PLATNIKA" ColumnName="GLN_PLATNIKA" />
+                <ScalarProperty Name="DD_NUMERU" ColumnName="DD_NUMERU" />
+                <ScalarProperty Name="DOSTAWA_INCOTERMS_CEL" ColumnName="DOSTAWA_INCOTERMS_CEL" />
+                <ScalarProperty Name="DOSTAWA_INCOTERMS_SKROT" ColumnName="DOSTAWA_INCOTERMS_SKROT" />
+                <ScalarProperty Name="TERMIN_DOSTAWY" ColumnName="TERMIN_DOSTAWY" />
+                <ScalarProperty Name="ID_SP_DOSTAWY" ColumnName="ID_SP_DOSTAWY" />
+                <ScalarProperty Name="DOSTAWA_PANSTWO" ColumnName="DOSTAWA_PANSTWO" />
+                <ScalarProperty Name="DOSTAWA_MIEJSCOWOSC" ColumnName="DOSTAWA_MIEJSCOWOSC" />
+                <ScalarProperty Name="DOSTAWA_KOD_POCZTOWY" ColumnName="DOSTAWA_KOD_POCZTOWY" />
+                <ScalarProperty Name="DOSTAWA_NR_LOKALU" ColumnName="DOSTAWA_NR_LOKALU" />
+                <ScalarProperty Name="DOSTAWA_NR_DOMU" ColumnName="DOSTAWA_NR_DOMU" />
+                <ScalarProperty Name="DOSTAWA_ULICA" ColumnName="DOSTAWA_ULICA" />
+                <ScalarProperty Name="DOSTAWA_ID_ADRESU" ColumnName="DOSTAWA_ID_ADRESU" />
+                <ScalarProperty Name="NAZWA_SPOSOBU_PLATNOSCI" ColumnName="NAZWA_SPOSOBU_PLATNOSCI" />
+                <ScalarProperty Name="ID_SPOSOBU_PLATNOSCI" ColumnName="ID_SPOSOBU_PLATNOSCI" />
+                <ScalarProperty Name="ID_RDS" ColumnName="ID_RDS" />
+                <ScalarProperty Name="DF_NAME" ColumnName="DF_NAME" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="ID_WNTT" ColumnName="ID_WNTT" />
+                <ScalarProperty Name="KOD_RODZAJU_TRANSAKCJI" ColumnName="KOD_RODZAJU_TRANSAKCJI" />
+                <ScalarProperty Name="KOD_RODZAJU_TRANSPORTU" ColumnName="KOD_RODZAJU_TRANSPORTU" />
+                <ScalarProperty Name="KOD_WARUNKOW_DOSTAWY" ColumnName="KOD_WARUNKOW_DOSTAWY" />
+                <ScalarProperty Name="KOD_KRAJU_PRZEZNACZENIA" ColumnName="KOD_KRAJU_PRZEZNACZENIA" />
+                <ScalarProperty Name="TRANSAKCJA_TROJSTRONNA" ColumnName="TRANSAKCJA_TROJSTRONNA" />
+                <ScalarProperty Name="UWAGI" ColumnName="UWAGI" />
+                <ScalarProperty Name="MAGAZYNOWY" ColumnName="MAGAZYNOWY" />
+                <ScalarProperty Name="PLN_WARTOSC_BRUTTO" ColumnName="PLN_WARTOSC_BRUTTO" />
+                <ScalarProperty Name="PLN_KWOTA_VAT" ColumnName="PLN_KWOTA_VAT" />
+                <ScalarProperty Name="GRUPOWANIE" ColumnName="GRUPOWANIE" />
+                <ScalarProperty Name="ZNACZNIKI" ColumnName="ZNACZNIKI" />
+                <ScalarProperty Name="SYGNATURA" ColumnName="SYGNATURA" />
+                <ScalarProperty Name="WARTOSC_ROZRACHUNKU" ColumnName="WARTOSC_ROZRACHUNKU" />
+                <ScalarProperty Name="NAZWA_FS_DO_PA" ColumnName="NAZWA_FS_DO_PA" />
+                <ScalarProperty Name="NUMER_FS_DO_PA" ColumnName="NUMER_FS_DO_PA" />
+                <ScalarProperty Name="NR_FS_DO_PA" ColumnName="NR_FS_DO_PA" />
+                <ScalarProperty Name="MIESIAC_FS_DO_PA" ColumnName="MIESIAC_FS_DO_PA" />
+                <ScalarProperty Name="ROK_FS_DO_PA" ColumnName="ROK_FS_DO_PA" />
+                <ScalarProperty Name="DATA_FS_DO_PA" ColumnName="DATA_FS_DO_PA" />
+                <ScalarProperty Name="DATAZMIANY" ColumnName="DATAZMIANY" />
+                <ScalarProperty Name="ZMIENIL" ColumnName="ZMIENIL" />
+                <ScalarProperty Name="DATAREJESTRACJI" ColumnName="DATAREJESTRACJI" />
+                <ScalarProperty Name="OPERATOR" ColumnName="OPERATOR" />
+                <ScalarProperty Name="PLN_WARTOSC_KAUCJ" ColumnName="PLN_WARTOSC_KAUCJ" />
+                <ScalarProperty Name="WAL_WARTOSC_KAUCJ" ColumnName="WAL_WARTOSC_KAUCJ" />
+                <ScalarProperty Name="WARTOSC_ZAKUPU_KAUCJ" ColumnName="WARTOSC_ZAKUPU_KAUCJ" />
+                <ScalarProperty Name="WARTOSC_ZAKUPU" ColumnName="WARTOSC_ZAKUPU" />
+                <ScalarProperty Name="PLN_WARTOSC_NETTO" ColumnName="PLN_WARTOSC_NETTO" />
+                <ScalarProperty Name="WAL_WARTOSC_BRUTTO" ColumnName="WAL_WARTOSC_BRUTTO" />
+                <ScalarProperty Name="WAL_KWOTA_VAT" ColumnName="WAL_KWOTA_VAT" />
+                <ScalarProperty Name="WAL_WARTOSC_NETTO" ColumnName="WAL_WARTOSC_NETTO" />
+                <ScalarProperty Name="NAZWISKO_PRZEDSTAWICIELA" ColumnName="NAZWISKO_PRZEDSTAWICIELA" />
+                <ScalarProperty Name="PROWIZJA_AKWIZYTORA" ColumnName="PROWIZJA_AKWIZYTORA" />
+                <ScalarProperty Name="ID_AKWIZYTORA" ColumnName="ID_AKWIZYTORA" />
+                <ScalarProperty Name="PANSTWO_ODBIORCY" ColumnName="PANSTWO_ODBIORCY" />
+                <ScalarProperty Name="KOD_ODBIORCY" ColumnName="KOD_ODBIORCY" />
+                <ScalarProperty Name="MIEJSCOWOSC_ODBIORCY" ColumnName="MIEJSCOWOSC_ODBIORCY" />
+                <ScalarProperty Name="NRLOKALU_ODBIORCY" ColumnName="NRLOKALU_ODBIORCY" />
+                <ScalarProperty Name="NRDOMU_ODBIORCY" ColumnName="NRDOMU_ODBIORCY" />
+                <ScalarProperty Name="ULICA_ODBIORCY" ColumnName="ULICA_ODBIORCY" />
+                <ScalarProperty Name="KOD_KRESKOWY_ODBIORCY" ColumnName="KOD_KRESKOWY_ODBIORCY" />
+                <ScalarProperty Name="NIP_ODBIORCY" ColumnName="NIP_ODBIORCY" />
+                <ScalarProperty Name="NAZWA_PELNA_ODBIORCY" ColumnName="NAZWA_PELNA_ODBIORCY" />
+                <ScalarProperty Name="NAZWA_SKROCONA_ODBIORCY" ColumnName="NAZWA_SKROCONA_ODBIORCY" />
+                <ScalarProperty Name="PANSTWO_PLATNIKA" ColumnName="PANSTWO_PLATNIKA" />
+                <ScalarProperty Name="KOD_PLATNIKA" ColumnName="KOD_PLATNIKA" />
+                <ScalarProperty Name="MIEJSCOWOSC_PLATNIKA" ColumnName="MIEJSCOWOSC_PLATNIKA" />
+                <ScalarProperty Name="NRLOKALU_PLATNIKA" ColumnName="NRLOKALU_PLATNIKA" />
+                <ScalarProperty Name="NRDOMU_PLATNIKA" ColumnName="NRDOMU_PLATNIKA" />
+                <ScalarProperty Name="ULICA_PLATNIKA" ColumnName="ULICA_PLATNIKA" />
+                <ScalarProperty Name="KOD_KRESKOWY_PLATNIKA" ColumnName="KOD_KRESKOWY_PLATNIKA" />
+                <ScalarProperty Name="NIP_PLATNIKA" ColumnName="NIP_PLATNIKA" />
+                <ScalarProperty Name="NAZWA_PELNA_PLATNIKA" ColumnName="NAZWA_PELNA_PLATNIKA" />
+                <ScalarProperty Name="NAZWA_SKROCONA_PLATNIKA" ColumnName="NAZWA_SKROCONA_PLATNIKA" />
+                <ScalarProperty Name="ID_ODBIORCY" ColumnName="ID_ODBIORCY" />
+                <ScalarProperty Name="ID_PLATNIKA" ColumnName="ID_PLATNIKA" />
+                <ScalarProperty Name="NAZWA_DOKUMENTU" ColumnName="NAZWA_DOKUMENTU" />
+                <ScalarProperty Name="NUMER_TABELI_KURSOWEJ" ColumnName="NUMER_TABELI_KURSOWEJ" />
+                <ScalarProperty Name="DATA_SPRZEDAZY" ColumnName="DATA_SPRZEDAZY" />
+                <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
+                <ScalarProperty Name="KURS" ColumnName="KURS" />
+                <ScalarProperty Name="ID_WALUTY" ColumnName="ID_WALUTY" />
+                <ScalarProperty Name="ID_TABELI_KURSOWEJ" ColumnName="ID_TABELI_KURSOWEJ" />
+                <ScalarProperty Name="RODZAJ_RABATU" ColumnName="RODZAJ_RABATU" />
+                <ScalarProperty Name="RODZAJ_CENY" ColumnName="RODZAJ_CENY" />
+                <ScalarProperty Name="SPOSOB_LICZENIA" ColumnName="SPOSOB_LICZENIA" />
+                <ScalarProperty Name="FISKALNY" ColumnName="FISKALNY" />
+                <ScalarProperty Name="BLOKADA" ColumnName="BLOKADA" />
+                <ScalarProperty Name="NUMER" ColumnName="NUMER" />
+                <ScalarProperty Name="NR" ColumnName="NR" />
+                <ScalarProperty Name="MIESIAC" ColumnName="MIESIAC" />
+                <ScalarProperty Name="ROK" ColumnName="ROK" />
+                <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="TYP_DOK_MAGAZYNOWEGO" ColumnName="TYP_DOK_MAGAZYNOWEGO" />
+                <ScalarProperty Name="MAGNUM" ColumnName="MAGNUM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GM_FZ">
+            <EntityTypeMapping TypeName="Model.GM_FZ">
+              <MappingFragment StoreEntitySet="GM_FZ">
+                <ScalarProperty Name="ID_PODSTAWY_ZWOL_VAT" ColumnName="ID_PODSTAWY_ZWOL_VAT" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="DATA_OTRZYMANIA_SAD" ColumnName="DATA_OTRZYMANIA_SAD" />
+                <ScalarProperty Name="DATA_SAD" ColumnName="DATA_SAD" />
+                <ScalarProperty Name="NUMER_SAD" ColumnName="NUMER_SAD" />
+                <ScalarProperty Name="TYP_DOK_MAGAZYNOWEGO" ColumnName="TYP_DOK_MAGAZYNOWEGO" />
+                <ScalarProperty Name="MAGAZYNOWY" ColumnName="MAGAZYNOWY" />
+                <ScalarProperty Name="WAL_WARTOSC_BRUTTO_PO" ColumnName="WAL_WARTOSC_BRUTTO_PO" />
+                <ScalarProperty Name="WAL_KWOTA_VAT_PO" ColumnName="WAL_KWOTA_VAT_PO" />
+                <ScalarProperty Name="WAL_WARTOSC_NETTO_PO" ColumnName="WAL_WARTOSC_NETTO_PO" />
+                <ScalarProperty Name="NUMER_TABELI_KURSOWEJ" ColumnName="NUMER_TABELI_KURSOWEJ" />
+                <ScalarProperty Name="KURS" ColumnName="KURS" />
+                <ScalarProperty Name="ID_WALUTY" ColumnName="ID_WALUTY" />
+                <ScalarProperty Name="ID_TABELI_KURSOWEJ" ColumnName="ID_TABELI_KURSOWEJ" />
+                <ScalarProperty Name="UWAGI" ColumnName="UWAGI" />
+                <ScalarProperty Name="ZNACZNIKI" ColumnName="ZNACZNIKI" />
+                <ScalarProperty Name="SYGNATURA" ColumnName="SYGNATURA" />
+                <ScalarProperty Name="WARTOSC_ROZRACHUNKU" ColumnName="WARTOSC_ROZRACHUNKU" />
+                <ScalarProperty Name="NRDOMU_DOSTAWCY" ColumnName="NRDOMU_DOSTAWCY" />
+                <ScalarProperty Name="SPOSOB_LICZENIA" ColumnName="SPOSOB_LICZENIA" />
+                <ScalarProperty Name="DATA_DOWODU" ColumnName="DATA_DOWODU" />
+                <ScalarProperty Name="DATAZMIANY" ColumnName="DATAZMIANY" />
+                <ScalarProperty Name="ZMIENIL" ColumnName="ZMIENIL" />
+                <ScalarProperty Name="DATAREJESTRACJI" ColumnName="DATAREJESTRACJI" />
+                <ScalarProperty Name="OPERATOR" ColumnName="OPERATOR" />
+                <ScalarProperty Name="NAZWA_DOKUMENTU" ColumnName="NAZWA_DOKUMENTU" />
+                <ScalarProperty Name="PLN_WARTOSC_NETTO_PO" ColumnName="PLN_WARTOSC_NETTO_PO" />
+                <ScalarProperty Name="PLN_WARTOSC_BRUTTO_PO" ColumnName="PLN_WARTOSC_BRUTTO_PO" />
+                <ScalarProperty Name="PLN_KWOTA_VAT_PO" ColumnName="PLN_KWOTA_VAT_PO" />
+                <ScalarProperty Name="PANSTWO_DOSTAWCY" ColumnName="PANSTWO_DOSTAWCY" />
+                <ScalarProperty Name="ROLNIKR" ColumnName="ROLNIKR" />
+                <ScalarProperty Name="ORGAN_DOWODU_DOSTAWCY" ColumnName="ORGAN_DOWODU_DOSTAWCY" />
+                <ScalarProperty Name="DATA_DOWODU_DOSTAWCY" ColumnName="DATA_DOWODU_DOSTAWCY" />
+                <ScalarProperty Name="NUMER_DOWODU_DOSTAWCY" ColumnName="NUMER_DOWODU_DOSTAWCY" />
+                <ScalarProperty Name="PESEL_DOSTAWCY" ColumnName="PESEL_DOSTAWCY" />
+                <ScalarProperty Name="MIEJSCOWOSC_DOSTAWCY" ColumnName="MIEJSCOWOSC_DOSTAWCY" />
+                <ScalarProperty Name="KOD_DOSTAWCY" ColumnName="KOD_DOSTAWCY" />
+                <ScalarProperty Name="NRLOKALU_DOSTAWCY" ColumnName="NRLOKALU_DOSTAWCY" />
+                <ScalarProperty Name="ULICA_DOSTAWCY" ColumnName="ULICA_DOSTAWCY" />
+                <ScalarProperty Name="NAZWA_PELNA_DOSTAWCY" ColumnName="NAZWA_PELNA_DOSTAWCY" />
+                <ScalarProperty Name="KOD_KRESKOWY" ColumnName="KOD_KRESKOWY" />
+                <ScalarProperty Name="NIP_DOSTAWCY" ColumnName="NIP_DOSTAWCY" />
+                <ScalarProperty Name="NAZWA_SKROCONA_DOSTAWCY" ColumnName="NAZWA_SKROCONA_DOSTAWCY" />
+                <ScalarProperty Name="NR_FAKTURY_DOSTAWCY" ColumnName="NR_FAKTURY_DOSTAWCY" />
+                <ScalarProperty Name="ID_DOSTAWCY" ColumnName="ID_DOSTAWCY" />
+                <ScalarProperty Name="DATA_OTRZYMANIA_FAKTURY" ColumnName="DATA_OTRZYMANIA_FAKTURY" />
+                <ScalarProperty Name="NAZWA_SPOSOBU_PLATNOSCI" ColumnName="NAZWA_SPOSOBU_PLATNOSCI" />
+                <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
+                <ScalarProperty Name="ID_SPOSOBU_PLATNOSCI" ColumnName="ID_SPOSOBU_PLATNOSCI" />
+                <ScalarProperty Name="BLOKADA" ColumnName="BLOKADA" />
+                <ScalarProperty Name="NUMER" ColumnName="NUMER" />
+                <ScalarProperty Name="NR" ColumnName="NR" />
+                <ScalarProperty Name="MIESIAC" ColumnName="MIESIAC" />
+                <ScalarProperty Name="ROK" ColumnName="ROK" />
+                <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
+                <ScalarProperty Name="KOD" ColumnName="KOD" />
+                <ScalarProperty Name="MAGNUM" ColumnName="MAGNUM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

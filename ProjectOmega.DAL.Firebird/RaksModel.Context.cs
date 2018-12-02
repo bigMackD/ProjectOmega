@@ -28,5 +28,7 @@ namespace ProjectOmega.DAL.Firebird
         public DbSet<R3_CONTACT_PHONES> R3_CONTACT_PHONES { get; set; }
         public DbSet<R3_CONTACT_WEB_ADDRESSES> R3_CONTACT_WEB_ADDRESSES { get; set; }
         public DbSet<R3_CONTACTS> R3_CONTACTS { get; set; }
+        public DbSet<GM_FS> GM_FS { get; set; }
+        public DbSet<GM_FZ> GM_FZ { get; set; }
     }
 }
