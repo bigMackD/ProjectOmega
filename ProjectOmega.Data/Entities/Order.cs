@@ -5,15 +5,16 @@ namespace ProjectOmega.Data.Entities
     public class Order
     {
         [Key]
-        public long OrderId { get; set; }
+        public long Id { get; set; }
 
         public string Number { get; set; }
 
         public long ClientId { get; set; }
-        public long StatusId { get; set; }
+        public Status Status { get; set; }
 
-        public long UserAddedId { get; set; }
-        public long UserResponsibleId { get; set; }
-        public long UserInvoiceId { get; set; }
+        public User UserAdded { get; set; }
+        public User UserResponsible { get; set; }
+        public User UserInvoice { get; set; }
     }
+    // TODO enum status
 }

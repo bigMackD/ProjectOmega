@@ -5,7 +5,7 @@ namespace ProjectOmega.Data.Entities
     public class Client
     {
         [Key]
-        public long ClientId { get; set; }
+        public long Id { get; set; }
 
         public string ShortName { get; set; }
         public string FullName { get; set; }

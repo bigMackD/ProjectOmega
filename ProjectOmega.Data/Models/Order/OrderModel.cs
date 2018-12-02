@@ -1,14 +1,16 @@
-﻿namespace ProjectOmega.Data.Models.Order
+﻿using ProjectOmega.Data.Entities;
+
+namespace ProjectOmega.Data.Models.Order
 {
     public class OrderModel
     {
         public string Number { get; set; }
 
         public long ClientId { get; set; }
-        public long StatusId { get; set; }
+        public Status Status { get; set; }
 
-        public long UserAddedId { get; set; }
-        public long UserResponsibleId { get; set; }
-        public long UserInvoiceId { get; set; }
+        public User UserAdded { get; set; }
+        public User UserResponsible { get; set; }
+        public User UserInvoice { get; set; }
     }
 }
