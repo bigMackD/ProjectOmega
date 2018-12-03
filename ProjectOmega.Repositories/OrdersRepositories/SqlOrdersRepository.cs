@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectOmega.Data.Entities;
 using ProjectOmega.Data.Models.Order;
 using ProjectOmega.DAL.MsSql.Services;
 
@@ -16,12 +17,22 @@ namespace ProjectOmega.Repositories.OrdersRepositories
 
         public void Create(AddOrderModel order)
         {
-            throw new NotImplementedException();
+            new Order()
+            {
+                ClientId = order.ClientId,
+                Status = order.Status,
+                UserAdded = order.UserAdded
+            };
         }
 
-        public void Update(EditOrderModel order)
+        public void Update(EditOrderModel orderToBeEdited)
         {
-            throw new NotImplementedException();
+            _context.Remove(_context.Orders.FirstOrDefault(x => x.Id == orderToBeEdited.Id));
+            Order newOrder =  new Order()
+            {
+                Id = orderToBeEdited.Id,
+                ClientId = 
+            };
         }
 
         public IEnumerable<OrderModel> GetAll()
