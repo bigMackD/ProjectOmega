@@ -31,7 +31,10 @@ namespace ProjectOmega.Repositories.OrdersRepositories
             Order newOrder =  new Order()
             {
                 Id = orderToBeEdited.Id,
-                ClientId = 
+                ClientId = orderToBeEdited.ClientId,
+                Status = orderToBeEdited.Status,
+                UserResponsible = orderToBeEdited.UserResponsible,
+                UserInvoice = orderToBeEdited.UserInvoice,
             };
         }
 
