@@ -9,5 +9,6 @@ namespace ProjectOmega.Repositories.OrdersRepositories
         void Update(EditOrderModel order);
         IEnumerable<OrderModel> GetAll();
         OrderModel GetById(long id);
+        void Remove(long id);
     }
 }

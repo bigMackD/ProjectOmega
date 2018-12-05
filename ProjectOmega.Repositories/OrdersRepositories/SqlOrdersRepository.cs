@@ -53,6 +53,9 @@ namespace ProjectOmega.Repositories.OrdersRepositories
         public OrderModel GetById(long id)
         {
            var order =  _context.Orders.SingleOrDefault(x => x.Id == id);
+            if (order == null)
+                return null;
+
             return new OrderModel()
             {
                 Number = order.Number,
@@ -62,6 +65,12 @@ namespace ProjectOmega.Repositories.OrdersRepositories
                 UserInvoice = order.UserInvoice,
                 Status = order.Status
             };
+        }
+
+        public void Remove(long id)
+        {
+            var orderToBeRemoved = _context.Orders.SingleOrDefault(x => x.Id == id);
+            _context.Orders.Remove(orderToBeRemoved);
         }
     }
 }

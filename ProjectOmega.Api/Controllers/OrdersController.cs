@@ -34,9 +34,9 @@ namespace ProjectOmega.Api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<OrderModel> Get(long id)
         {
-            return "value";
+            return _orders.GetById(id);
         }
 
         // TODO
@@ -47,6 +47,7 @@ namespace ProjectOmega.Api.Controllers
         [HttpPost]
         public void Post([FromBody] AddOrderModel order)
         {
+            _orders.Create(order);
         }
 
         // TODO
@@ -57,6 +58,7 @@ namespace ProjectOmega.Api.Controllers
         [HttpPut]
         public void Put([FromBody] EditOrderModel order)
         {
+            _orders.Update(order);
         }
 
         // TODO
@@ -67,7 +69,7 @@ namespace ProjectOmega.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(long id)
         {
-            
+            _orders.Remove(id);
         }
     }
 }
