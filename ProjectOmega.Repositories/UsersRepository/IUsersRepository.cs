@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ProjectOmega.Data.Models.User;
 
 namespace ProjectOmega.Repositories.UsersRepository
 {
-    public class IUsersRepository
+    public interface IUsersRepository
     {
+        void Create(AddUserModel user);
+        void Update(EditUserModel user);
+        void Remove(long id);
+        IEnumerable<UserModel> GetAll();
     }
 }

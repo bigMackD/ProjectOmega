@@ -1,8 +1,6 @@
-﻿using ProjectOmega.Data.Models.Role;
-
-namespace ProjectOmega.Data.Models.User
+﻿namespace ProjectOmega.Data.Models.User
 {
-    public class AddUserModel
+    public class EditUserModel
     {
         public string Password { get; set; }
 

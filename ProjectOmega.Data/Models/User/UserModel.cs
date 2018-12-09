@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ProjectOmega.Data.Models.Role;
 
 namespace ProjectOmega.Data.Models.User
 {
@@ -11,5 +8,6 @@ namespace ProjectOmega.Data.Models.User
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public RoleModel Role { get; set; }
     }
 }
