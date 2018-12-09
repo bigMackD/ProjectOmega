@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectOmega.DAL.MsSql.Services;
 using ProjectOmega.Repositories.OrdersRepositories;
+using ProjectOmega.Repositories.UsersRepository;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace ProjectOmega.Api
@@ -27,6 +28,7 @@ namespace ProjectOmega.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IOrdersRepository, SqlOrdersRepository>();
+            services.AddScoped<IUsersRepository, SqlUsersRepository>();
             var connection = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=OmegaDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;";
             services.AddDbContext<ApplicationDbContext>
                 (options => options.UseSqlServer(connection));

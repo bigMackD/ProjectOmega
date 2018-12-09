@@ -8,7 +8,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Role",
+                name: "Roles",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
@@ -17,7 +17,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Role", x => x.Id);
+                    table.PrimaryKey("PK_Roles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,9 +36,9 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_Role_RoleId",
+                        name: "FK_Users_Roles_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "Role",
+                        principalTable: "Roles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -82,7 +82,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserAddedId",
                 table: "Orders",
-                column: "UserAdded");
+                column: "UserAddedId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserInvoiceId",
@@ -109,7 +109,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Role");
+                name: "Roles");
         }
     }
 }

@@ -10,7 +10,7 @@ using ProjectOmega.DAL.MsSql.Services;
 namespace ProjectOmega.DAL.MsSql.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181209094250_InitialMigration")]
+    [Migration("20181209121558_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<long?>("UserAdded");
+                    b.Property<long?>("UserAddedId");
 
                     b.Property<long?>("UserInvoiceId");
 
@@ -41,7 +41,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserAdded");
+                    b.HasIndex("UserAddedId");
 
                     b.HasIndex("UserInvoiceId");
 
@@ -60,7 +60,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("ProjectOmega.Data.Entities.User", b =>
@@ -90,7 +90,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 {
                     b.HasOne("ProjectOmega.Data.Entities.User", "UserAdded")
                         .WithMany()
-                        .HasForeignKey("UserAdded");
+                        .HasForeignKey("UserAddedId");
 
                     b.HasOne("ProjectOmega.Data.Entities.User", "UserInvoice")
                         .WithMany()
