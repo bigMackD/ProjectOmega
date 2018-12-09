@@ -30,23 +30,57 @@ namespace ProjectOmega.Repositories.OrdersRepositories
             _context.SaveChanges();
         }
 
-        public void Update(EditOrderModel orderToBeEdited)
+        public void Update(EditOrderModel order)
         {
-            _context.Remove(_context.Orders.FirstOrDefault(x => x.Id == orderToBeEdited.Id));
-            Order newOrder =  new Order()
-            {
-                Id = orderToBeEdited.Id,
-                ClientId = orderToBeEdited.ClientId,
-                Status = orderToBeEdited.Status,
-                UserResponsible = orderToBeEdited.UserResponsible,
-                UserInvoice = orderToBeEdited.UserInvoice,
-            };
+            var orderToBeEdited =_context.Orders.SingleOrDefault(x => x.Id == order.Id);
+
+            var userAdded = _context.Users.SingleOrDefault(u => u.Id == order.UserResponsibleId);
+            var userResponsible = _context.Users.SingleOrDefault(u => u.Id == order.UserResponsibleId);
+            var userInvoice = _context.Users.SingleOrDefault(u => u.Id == order.UserResponsibleId);
+           
+            orderToBeEdited.Id = order.Id;
+            orderToBeEdited.Status = order.Status;
+            orderToBeEdited.UserAdded = userAdded;
+            orderToBeEdited.UserInvoice = userInvoice;
+            orderToBeEdited.UserResponsible = userResponsible;
+            orderToBeEdited.ClientId = order.ClientId;
+
+            _context.SaveChanges();
         }
 
         public IEnumerable<OrderModel> GetAll()
         {
             return _context.Orders.Select(x => new OrderModel()
             {
+                Number = x.Number,
+                ClientId = x.ClientId,
+                Status = x.Status,
+                UserAdded = new UserModel
+                {
+                    Id = x.UserAdded.Id,
+                    FirstName = x.UserAdded.FirstName,
+                    LastName = x.UserAdded.LastName
+                },
+                UserResponsible = new UserModel
+                {
+                    Id = x.UserResponsible.Id,
+                    FirstName = x.UserResponsible.FirstName,
+                    LastName = x.UserResponsible.LastName,
+                },
+                UserInvoice = new UserModel
+                {
+                    Id = x.UserInvoice.Id,
+                    FirstName = x.UserInvoice.FirstName,
+                    LastName = x.UserInvoice.LastName,
+                }
+            }).ToList();
+        }
+
+        public OrderModel GetById(long id)
+        {
+          return  _context.Orders.Select(x => new OrderModel()
+            {
+                Id = x.Id,
                 Number = x.Number,
                 ClientId = x.ClientId,
                 UserAdded = new UserModel
@@ -68,46 +102,7 @@ namespace ProjectOmega.Repositories.OrdersRepositories
                     LastName = x.UserInvoice.LastName
                 },
                 Status = x.Status
-            });
-        }
-
-        public OrderModel GetById(long id)
-        {
-           var order =  _context.Orders.SingleOrDefault(x => x.Id == id);
-            if (order == null)
-                return null;
-            else
-            {
-                var status = (Status) order.Status;
-
-                return new OrderModel()
-                {
-                    Number = order.Number,
-                    ClientId = order.ClientId,
-                    UserAdded = new UserModel
-                    {
-                        Id = order.UserAdded.Id,
-                        FirstName = order.UserAdded.FirstName,
-                        LastName = order.UserAdded.LastName
-                    },
-                    UserResponsible = new UserModel
-                    {
-                        Id = order.UserResponsible.Id,
-                        FirstName = order.UserResponsible.FirstName,
-                        LastName = order.UserResponsible.LastName
-                    },
-                    UserInvoice = new UserModel
-                    {
-                        Id = order.UserInvoice.Id,
-                        FirstName = order.UserInvoice.FirstName,
-                        LastName = order.UserInvoice.LastName
-                    },
-
-                    Status = status
-                };
-            }
-
-           
+            }).SingleOrDefault(o => o.Id == id);
         }
 
         public void Remove(long id)

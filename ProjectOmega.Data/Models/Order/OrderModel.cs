@@ -5,6 +5,7 @@ namespace ProjectOmega.Data.Models.Order
 {
     public class OrderModel
     {
+        public long Id { get; set; }
         public string Number { get; set; }
 
         public long ClientId { get; set; }

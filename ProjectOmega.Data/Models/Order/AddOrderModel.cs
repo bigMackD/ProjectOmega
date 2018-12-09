@@ -1,7 +1,4 @@
-﻿using ProjectOmega.Data.Entities;
-using ProjectOmega.Data.Models.User;
-
-namespace ProjectOmega.Data.Models.Order
+﻿namespace ProjectOmega.Data.Models.Order
 {
     public class AddOrderModel
     {
