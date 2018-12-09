@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectOmega.DAL.Firebird\ProjectOmega.DAL.Firebird.csproj" />
     <ProjectReference Include="..\ProjectOmega.DAL.MsSql\ProjectOmega.DAL.MsSql.csproj" />
     <ProjectReference Include="..\ProjectOmega.Data\ProjectOmega.Data.csproj" />
   </ItemGroup>

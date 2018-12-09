@@ -13,10 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Client\" />
-    <Folder Include="Models\User\" />
     <Folder Include="Models\Status\" />
-    <Folder Include="Models\Role\" />
   </ItemGroup>
 
 </Project>

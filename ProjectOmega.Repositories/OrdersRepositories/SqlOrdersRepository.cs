@@ -16,12 +16,17 @@ namespace ProjectOmega.Repositories.OrdersRepositories
 
         public void Create(AddOrderModel order)
         {
-            new Order()
+            var user = _context.Users.Single(u => u.Id == order.UserAddedId);
+            var status = (Status)order.Status;
+
+            Order newOrder = new Order
             {
                 ClientId = order.ClientId,
-                Status = order.Status,
-                UserAdded = order.UserAdded
+                Status = status,
+                UserAdded = user
             };
+            _context.Orders.Add(newOrder);
+            _context.SaveChanges();
         }
 
         public void Update(EditOrderModel orderToBeEdited)
@@ -41,7 +46,7 @@ namespace ProjectOmega.Repositories.OrdersRepositories
         {
             return _context.Orders.Select(x => new OrderModel()
             {
-                Number = "MockedNumber",
+                Number = x.Number,
                 ClientId = x.ClientId,
                 UserAdded = x.UserAdded,
                 UserResponsible = x.UserResponsible,
