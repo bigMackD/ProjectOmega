@@ -12,7 +12,5 @@ namespace ProjectOmega.Data.Entities
         public string LastName { get; set; }
         public Role Role { get; set; }
         public bool IsActive { get; set; }
-
-        
     }
 }

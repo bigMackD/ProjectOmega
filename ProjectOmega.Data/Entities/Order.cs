@@ -16,5 +16,11 @@ namespace ProjectOmega.Data.Entities
         public User UserResponsible { get; set; }
         public User UserInvoice { get; set; }
     }
-    // TODO enum status
+
+    public enum Status
+    {
+        Admin,
+        Tester,
+        User
+    }
 }
