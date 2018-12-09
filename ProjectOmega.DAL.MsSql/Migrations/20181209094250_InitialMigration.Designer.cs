@@ -10,8 +10,8 @@ using ProjectOmega.DAL.MsSql.Services;
 namespace ProjectOmega.DAL.MsSql.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181202171723_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20181209094250_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.Property<string>("Number");
 
-                    b.Property<long?>("StatusId");
+                    b.Property<int>("Status");
 
                     b.Property<long?>("UserAddedId");
 
@@ -40,8 +40,6 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                     b.Property<long?>("UserResponsibleId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StatusId");
 
                     b.HasIndex("UserAddedId");
 
@@ -62,20 +60,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
-                });
-
-            modelBuilder.Entity("ProjectOmega.Data.Entities.Status", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Status");
+                    b.ToTable("Role");
                 });
 
             modelBuilder.Entity("ProjectOmega.Data.Entities.User", b =>
@@ -103,10 +88,6 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
             modelBuilder.Entity("ProjectOmega.Data.Entities.Order", b =>
                 {
-                    b.HasOne("ProjectOmega.Data.Entities.Status", "Status")
-                        .WithMany()
-                        .HasForeignKey("StatusId");
-
                     b.HasOne("ProjectOmega.Data.Entities.User", "UserAdded")
                         .WithMany()
                         .HasForeignKey("UserAddedId");

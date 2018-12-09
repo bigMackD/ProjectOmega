@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjectOmega.DAL.MsSql.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Roles",
+                name: "Role",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
@@ -17,20 +17,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Roles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Status",
-                columns: table => new
-                {
-                    Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Status", x => x.Id);
+                    table.PrimaryKey("PK_Role", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,9 +36,9 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_Roles_RoleId",
+                        name: "FK_Users_Role_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "Roles",
+                        principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -64,7 +51,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Number = table.Column<string>(nullable: true),
                     ClientId = table.Column<long>(nullable: false),
-                    StatusId = table.Column<long>(nullable: true),
+                    Status = table.Column<int>(nullable: false),
                     UserAddedId = table.Column<long>(nullable: true),
                     UserResponsibleId = table.Column<long>(nullable: true),
                     UserInvoiceId = table.Column<long>(nullable: true)
@@ -72,12 +59,6 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Orders_Status_StatusId",
-                        column: x => x.StatusId,
-                        principalTable: "Status",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Users_UserAddedId",
                         column: x => x.UserAddedId,
@@ -97,11 +78,6 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_StatusId",
-                table: "Orders",
-                column: "StatusId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserAddedId",
@@ -130,13 +106,10 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Status");
-
-            migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Roles");
+                name: "Role");
         }
     }
 }
