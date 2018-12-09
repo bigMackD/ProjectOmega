@@ -31,7 +31,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<long?>("UserAddedId");
+                    b.Property<long?>("UserAdded");
 
                     b.Property<long?>("UserInvoiceId");
 
@@ -39,7 +39,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserAddedId");
+                    b.HasIndex("UserAdded");
 
                     b.HasIndex("UserInvoiceId");
 
@@ -88,7 +88,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
                 {
                     b.HasOne("ProjectOmega.Data.Entities.User", "UserAdded")
                         .WithMany()
-                        .HasForeignKey("UserAddedId");
+                        .HasForeignKey("UserAdded");
 
                     b.HasOne("ProjectOmega.Data.Entities.User", "UserInvoice")
                         .WithMany()

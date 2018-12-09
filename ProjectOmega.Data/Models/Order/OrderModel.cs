@@ -1,4 +1,5 @@
 ﻿using ProjectOmega.Data.Entities;
+using ProjectOmega.Data.Models.User;
 
 namespace ProjectOmega.Data.Models.Order
 {
@@ -9,8 +10,8 @@ namespace ProjectOmega.Data.Models.Order
         public long ClientId { get; set; }
         public Status Status;
     
-        public Entities.User UserAdded { get; set; }
-        public Entities.User UserResponsible { get; set; }
-        public Entities.User UserInvoice { get; set; }
+        public UserModel UserAdded { get; set; }
+        public UserModel UserResponsible { get; set; }
+        public UserModel UserInvoice { get; set; }
     }
 }

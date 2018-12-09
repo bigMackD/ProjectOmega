@@ -2,6 +2,7 @@
 using System.Linq;
 using ProjectOmega.Data.Entities;
 using ProjectOmega.Data.Models.Order;
+using ProjectOmega.Data.Models.User;
 using ProjectOmega.DAL.MsSql.Services;
 
 namespace ProjectOmega.Repositories.OrdersRepositories
@@ -48,9 +49,24 @@ namespace ProjectOmega.Repositories.OrdersRepositories
             {
                 Number = x.Number,
                 ClientId = x.ClientId,
-                UserAdded = x.UserAdded,
-                UserResponsible = x.UserResponsible,
-                UserInvoice = x.UserInvoice,
+                UserAdded = new UserModel
+                {
+                    Id = x.UserAdded.Id,
+                    FirstName = x.UserAdded.FirstName,
+                    LastName = x.UserAdded.LastName
+                },
+                UserResponsible = new UserModel
+                {
+                    Id = x.UserResponsible.Id,
+                    FirstName = x.UserResponsible.FirstName,
+                    LastName = x.UserResponsible.LastName
+                },
+                UserInvoice = new UserModel
+                {
+                    Id = x.UserInvoice.Id,
+                    FirstName = x.UserInvoice.FirstName,
+                    LastName = x.UserInvoice.LastName
+                },
                 Status = x.Status
             });
         }
@@ -60,22 +76,45 @@ namespace ProjectOmega.Repositories.OrdersRepositories
            var order =  _context.Orders.SingleOrDefault(x => x.Id == id);
             if (order == null)
                 return null;
-
-            return new OrderModel()
+            else
             {
-                Number = order.Number,
-                ClientId = order.ClientId,
-                UserAdded = order.UserAdded,
-                UserResponsible = order.UserResponsible,
-                UserInvoice = order.UserInvoice,
-                Status = order.Status
-            };
+                var status = (Status) order.Status;
+
+                return new OrderModel()
+                {
+                    Number = order.Number,
+                    ClientId = order.ClientId,
+                    UserAdded = new UserModel
+                    {
+                        Id = order.UserAdded.Id,
+                        FirstName = order.UserAdded.FirstName,
+                        LastName = order.UserAdded.LastName
+                    },
+                    UserResponsible = new UserModel
+                    {
+                        Id = order.UserResponsible.Id,
+                        FirstName = order.UserResponsible.FirstName,
+                        LastName = order.UserResponsible.LastName
+                    },
+                    UserInvoice = new UserModel
+                    {
+                        Id = order.UserInvoice.Id,
+                        FirstName = order.UserInvoice.FirstName,
+                        LastName = order.UserInvoice.LastName
+                    },
+
+                    Status = status
+                };
+            }
+
+           
         }
 
         public void Remove(long id)
         {
             var orderToBeRemoved = _context.Orders.SingleOrDefault(x => x.Id == id);
             _context.Orders.Remove(orderToBeRemoved);
+            _context.SaveChanges();
         }
     }
 }

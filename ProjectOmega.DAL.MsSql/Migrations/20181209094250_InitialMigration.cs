@@ -82,7 +82,7 @@ namespace ProjectOmega.DAL.MsSql.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserAddedId",
                 table: "Orders",
-                column: "UserAddedId");
+                column: "UserAdded");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_UserInvoiceId",
