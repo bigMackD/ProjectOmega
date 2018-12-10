@@ -2,6 +2,7 @@
 using System.Linq;
 using ProjectOmega.Data.Entities;
 using ProjectOmega.Data.Models.Order;
+using ProjectOmega.Data.Models.Role;
 using ProjectOmega.Data.Models.User;
 using ProjectOmega.DAL.MsSql.Services;
 
@@ -59,20 +60,36 @@ namespace ProjectOmega.Repositories.OrdersRepositories
                 {
                     Id = x.UserAdded.Id,
                     FirstName = x.UserAdded.FirstName,
-                    LastName = x.UserAdded.LastName
+                    LastName = x.UserAdded.LastName,
+                    Role = new RoleModel()
+                    {
+                        Id = x.UserAdded.Role.Id,
+                        Name = x.UserAdded.Role.Name
+                    }
+                    
                 },
                 UserResponsible = new UserModel
                 {
                     Id = x.UserResponsible.Id,
                     FirstName = x.UserResponsible.FirstName,
                     LastName = x.UserResponsible.LastName,
+                    Role = new RoleModel()
+                    {
+                        Id = x.UserResponsible.Role.Id,
+                        Name = x.UserResponsible.Role.Name
+                    }
                 },
                 UserInvoice = new UserModel
                 {
                     Id = x.UserInvoice.Id,
                     FirstName = x.UserInvoice.FirstName,
                     LastName = x.UserInvoice.LastName,
-                }
+                    Role = new RoleModel()
+                    {
+                        Id = x.UserInvoice.Role.Id,
+                        Name = x.UserInvoice.Role.Name
+                    }
+                },
             }).ToList();
         }
 
@@ -87,19 +104,34 @@ namespace ProjectOmega.Repositories.OrdersRepositories
                 {
                     Id = x.UserAdded.Id,
                     FirstName = x.UserAdded.FirstName,
-                    LastName = x.UserAdded.LastName
+                    LastName = x.UserAdded.LastName,
+                    Role = new RoleModel()
+                    {
+                        Id = x.UserAdded.Role.Id,
+                        Name = x.UserAdded.Role.Name
+                    }
                 },
                 UserResponsible = new UserModel
                 {
                     Id = x.UserResponsible.Id,
                     FirstName = x.UserResponsible.FirstName,
-                    LastName = x.UserResponsible.LastName
+                    LastName = x.UserResponsible.LastName,
+                    Role = new RoleModel()
+                    {
+                        Id = x.UserResponsible.Role.Id,
+                        Name = x.UserResponsible.Role.Name
+                    }
                 },
                 UserInvoice = new UserModel
                 {
                     Id = x.UserInvoice.Id,
                     FirstName = x.UserInvoice.FirstName,
-                    LastName = x.UserInvoice.LastName
+                    LastName = x.UserInvoice.LastName,
+                    Role = new RoleModel()
+                    {
+                    Id = x.UserInvoice.Role.Id,
+                    Name = x.UserInvoice.Role.Name
+                }
                 },
                 Status = x.Status
             }).SingleOrDefault(o => o.Id == id);
