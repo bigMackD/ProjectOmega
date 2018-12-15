@@ -31,7 +31,34 @@ namespace ProjectOmega.Repositories.UsersRepository
 
         public void Update(EditUserModel user)
         {
-            throw new NotImplementedException();
+            var userToBeEdited = _context.Users.SingleOrDefault(x => x.Id == user.Id);
+            var role = _context.Roles.SingleOrDefault(x => x.Id == user.RoleId);
+
+            userToBeEdited.Id = user.Id;
+            userToBeEdited.FirstName = user.FirstName;
+            userToBeEdited.LastName = user.LastName;
+            userToBeEdited.Password = user.Password;
+            userToBeEdited.IsActive = true;
+            userToBeEdited.Role = role;
+
+            _context.SaveChanges();
+
+        }
+
+        public UserModel GetById(long id)
+        {
+            return _context.Users.Select(x => new UserModel()
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Role = new RoleModel()
+                {
+                    Id = x.Role.Id,
+                    Name = x.Role.Name
+                },
+
+            }).SingleOrDefault(u => u.Id == id);
         }
 
         public void Remove(long id)

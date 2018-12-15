@@ -7,7 +7,9 @@ namespace ProjectOmega.Repositories.UsersRepository
     {
         void Create(AddUserModel user);
         void Update(EditUserModel user);
-        void Remove(long id);
         IEnumerable<UserModel> GetAll();
+        UserModel GetById(long id);
+        void Remove(long id);
+       
     }
 }

@@ -39,7 +39,7 @@ namespace ProjectOmega.Api.Controllers
             return _orders.GetById(id);
         }
 
-        // TODO
+      
         /// <summary>
         /// Adds new order to DB
         /// </summary>
@@ -50,7 +50,6 @@ namespace ProjectOmega.Api.Controllers
             _orders.Create(order);
         }
 
-        // TODO
         /// <summary>
         /// Updates specified order
         /// </summary>
@@ -61,7 +60,7 @@ namespace ProjectOmega.Api.Controllers
             _orders.Update(order);
         }
 
-        // TODO
+       
         /// <summary>
         /// Deletes specified order
         /// </summary>

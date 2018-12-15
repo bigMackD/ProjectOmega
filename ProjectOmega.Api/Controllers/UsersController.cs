@@ -28,6 +28,17 @@ namespace ProjectOmega.Api.Controllers
             return Ok(_users.GetAll());
         }
 
+        /// <summary>
+        /// Returns user with specified ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public ActionResult<UserModel> Get(long id)
+        {
+            return _users.GetById(id);
+        }
+
 
         /// <summary>
         /// Adds new user to DB
@@ -39,7 +50,7 @@ namespace ProjectOmega.Api.Controllers
             _users.Create(order);
         }
 
-        // TODO
+       
         /// <summary>
         /// Updates specified user
         /// </summary>
@@ -50,7 +61,7 @@ namespace ProjectOmega.Api.Controllers
             _users.Update(order);
         }
 
-        // TODO
+      
         /// <summary>
         /// Deletes specified user
         /// </summary>
