@@ -43,11 +43,11 @@ namespace ProjectOmega.Api.Controllers
         /// <summary>
         /// Adds new user to DB
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name="user"></param>
         [HttpPost]
-        public void Post([FromBody] AddUserModel order)
+        public void Post([FromBody] AddUserModel user)
         {
-            _users.Create(order);
+            _users.Create(user);
         }
 
        
@@ -56,9 +56,9 @@ namespace ProjectOmega.Api.Controllers
         /// </summary>
         /// <param name="user"></param>
         [HttpPut]
-        public void Put([FromBody] EditUserModel order)
+        public void Put([FromBody] EditUserModel user)
         {
-            _users.Update(order);
+            _users.Update(user);
         }
 
       

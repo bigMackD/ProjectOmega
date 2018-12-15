@@ -9,7 +9,7 @@ namespace ProjectOmega.DAL.MsSql.Services
         {
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            var connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=OmegaDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;";
+            var connectionString = @"Data Source=DESKTOP-JTRHGV3\SQLEXPRESS;Initial Catalog=Omega;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             builder.UseSqlServer(connectionString);
 

@@ -13,6 +13,10 @@ namespace ProjectOmega.Api.Controllers
         ClientsRepository repo = new ClientsRepository();
 
         // GET: api/Clients
+        /// <summary>
+        /// Returns list of all Clients
+        /// </summary>
+        /// <returns>IEnumerable of ClientModel</returns>
         [HttpGet]
         public IEnumerable<ClientModel> Get()
         {
@@ -20,6 +24,11 @@ namespace ProjectOmega.Api.Controllers
         }
 
         // GET: api/Clients/5
+        /// <summary>
+        /// Returns Client specified by ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ClientModel</returns>
         [HttpGet("{id}", Name = "Get")]
         public ClientModel Get(long id)
         {

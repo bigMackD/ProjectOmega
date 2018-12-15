@@ -29,7 +29,7 @@ namespace ProjectOmega.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IOrdersRepository, SqlOrdersRepository>();
             services.AddScoped<IUsersRepository, SqlUsersRepository>();
-            var connection = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=OmegaDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;";
+            var connection = @"Data Source=DESKTOP-JTRHGV3\SQLEXPRESS;Initial Catalog=Omega;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<ApplicationDbContext>
                 (options => options.UseSqlServer(connection));
 
