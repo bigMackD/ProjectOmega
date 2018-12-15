@@ -63,7 +63,7 @@ namespace ProjectOmega.Repositories.UsersRepository
         public void Remove(long id)
         {
             var userToBeRemoved = _context.Users.SingleOrDefault(u => u.Id == id);
-            _context.Remove(userToBeRemoved);
+            _context.Users.Remove(userToBeRemoved);
             _context.SaveChanges();
         }
 

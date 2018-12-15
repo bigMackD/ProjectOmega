@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ProjectOmega.Data.Models.Client;
 
 namespace ProjectOmega.Repositories.ClientsRepository
 {
-    public class IClientsRepository
+    public interface IClientsRepository
     {
+        ClientModel GetById(long id);
+        IEnumerable<ClientModel> GetAll();
+
     }
 }
