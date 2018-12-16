@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.Repositories",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOmega.Data", "ProjectOmega.Data\ProjectOmega.Data.csproj", "{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectOmega.Api.Tests", "ProjectOmega.Api.Tests\ProjectOmega.Api.Tests.csproj", "{6EFF29C7-79AD-4E8C-A4CA-B6EC2B3451DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69222048-E4B8-4024-82ED-9ECF8D1DDF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFF29C7-79AD-4E8C-A4CA-B6EC2B3451DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFF29C7-79AD-4E8C-A4CA-B6EC2B3451DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFF29C7-79AD-4E8C-A4CA-B6EC2B3451DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFF29C7-79AD-4E8C-A4CA-B6EC2B3451DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
